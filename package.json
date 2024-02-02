@@ -1,0 +1,40 @@
+{
+  "name": "@mkopa/bindings-interface",
+  "version": "0.0.0-development",
+  "description": "SerialPort Bindings Typescript Types",
+  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "default": "./dist/index.js"
+  },
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": "git@github.com:mkopa/bindings-interface.git",
+  "homepage": "https://github.com/mkopa/bindings-interface",
+  "scripts": {
+    "lint": "tsc && eslint lib/**/*.ts",
+    "format": "eslint lib/**/*.ts --fix",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && tsc -p tsconfig-build.json",
+    "prepublishOnly": "npm run build",
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [
+    "serialport",
+    "serialport-binding"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.20.0",
+    "@typescript-eslint/parser": "6.20.0",
+    "eslint": "8.56.0",
+    "semantic-release": "23.0.0",
+    "typescript": "5.3.3"
+  }
+}
